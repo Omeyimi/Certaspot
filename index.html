@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certaspot | The Proficiency Engine</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            magenta: '#e5004f',
+                            dark: '#0a0a0a',
+                            card: '#141414',
+                            gray: '#a3a3a3',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .dark-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #e5004f 0%, #ff6b9d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .input-field {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #e5004f;
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 0 0 3px rgba(229, 0, 79, 0.2);
+        }
+        
+        /* Subtle ambient glow behind the hero */
+        .ambient-glow {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(229,0,79,0.12) 0%, rgba(10,10,10,0) 70%);
+            top: -200px;
+            right: -200px;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-magenta selection:text-white">
+
+    <nav class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <i class="fa-solid fa-bullseye text-brand-magenta text-2xl"></i>
+                <span class="font-sans font-semibold text-xl tracking-tight text-white">Certaspot</span>
+            </div>
+            
+            <!-- Center Links -->
+            <div class="hidden md:flex gap-8 items-center font-medium text-sm text-brand-gray">
+                <a href="#for-talent" class="hover:text-white transition-colors">For Talent</a>
+                <a href="#for-business" class="hover:text-white transition-colors">For Business</a>
+            </div>
+            
+            <!-- Right CTA -->
+            <div>
+                <a href="#waitlist" class="bg-brand-magenta hover:bg-[#ff1a6b] text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-[0_0_15px_rgba(229,0,79,0.3)]">
+                    Get started
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-40 pb-20 lg:pt-48 lg:pb-28 overflow-hidden min-h-screen flex flex-col items-center justify-center text-center">
+        <!-- Ambient Background Glow -->
+        <div class="ambient-glow"></div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10 animate-slide-up">
+            
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 border border-brand-magenta/30 bg-brand-magenta/10 px-4 py-1.5 rounded-full mb-8">
+                <span class="text-brand-magenta text-[0.65rem] font-bold tracking-[0.2em] uppercase">Launching soon in Edo State</span>
+            </div>
+            
+            <!-- Main Typography -->
+            <h1 class="font-heading text-6xl md:text-[5.5rem] font-bold leading-[1.05] tracking-tight text-white mb-6">
+                Learn. <span class="gradient-text">Earn.</span> Belong.
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-lg md:text-xl text-brand-gray leading-relaxed max-w-2xl mx-auto mb-10 font-light">
+                The vetted freelance marketplace integrating African youth into the global economy. 
+                <span class="text-white font-medium">Zero upfront fees</span> for talents. 
+                <span class="text-white font-medium">Frictionless, escrow-backed</span> hiring for businesses.
+            </p>
+
+            <!-- Call to Action -->
+            <a href="#waitlist" class="inline-block bg-white text-brand-dark hover:bg-gray-200 px-8 py-3.5 rounded-full font-semibold text-base transition-all transform hover:-translate-y-0.5 mb-16">
+                Join Waitlist
+            </a>
+
+            <!-- Trust Indicators -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-16 border-t border-white/10 pt-10">
+                <div class="flex items-center gap-4 text-left">
+                    <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white text-xl">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-white leading-tight">Escrow Protected</p>
+                        <p class="text-sm text-brand-gray mt-0.5">Guaranteed payouts</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 text-left">
+                    <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-magenta text-xl shadow-[0_0_15px_rgba(229,0,79,0.2)]">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-white leading-tight">Certaspot Badge</p>
+                        <p class="text-sm text-brand-gray mt-0.5">Top 5% verified talent</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 border-y border-white/5 bg-black/50">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xs font-bold text-white/30 uppercase tracking-widest mb-8">Validated and backed by industry leaders</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-40">
+                <div class="text-2xl font-heading font-bold flex items-center gap-2"><i class="fa-brands fa-slack"></i> TechHub Edo</div>
+                <div class="text-2xl font-heading font-bold flex items-center gap-2"><i class="fa-brands fa-stripe"></i> Escrow Secure</div>
+                <div class="text-2xl font-heading font-bold flex items-center gap-2"><i class="fa-solid fa-building"></i> 50+ SMEs LOI</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="for-talent" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 relative">
+                    <div class="w-full aspect-square max-w-md mx-auto dark-card rounded-[2rem] relative overflow-hidden flex items-center justify-center border border-white/10">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-magenta/20 to-transparent opacity-50"></div>
+                        <i class="fa-solid fa-laptop-code text-white/80 text-[6rem] relative z-10"></i>
+                        
+                        <div class="absolute bottom-8 left-8 right-8 bg-[#1a1a1a]/90 backdrop-blur-md rounded-2xl p-4 flex items-center gap-4 border border-white/10 z-20">
+                            <div class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center text-green-400"><i class="fa-solid fa-check"></i></div>
+                            <div>
+                                <p class="text-xs text-brand-gray font-semibold uppercase tracking-wider">Escrow Released</p>
+                                <p class="text-lg font-bold text-white">₦150,000 Paid</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2">
+                    <h2 class="font-heading text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">Stop searching. <br>Start earning.</h2>
+                    <p class="text-lg text-brand-gray mb-10 leading-relaxed">
+                        You have the skills, but getting clients is a full-time job. Certaspot is the infrastructure that turns your training into a reliable income stream.
+                    </p>
+                    
+                    <ul class="space-y-8">
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white shrink-0">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-white mb-1">Zero Upfront Fees</h4>
+                                <p class="text-sm text-brand-gray leading-relaxed">We don't charge you to find work. Our platform is completely free for verified talents.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-magenta shrink-0 shadow-[0_0_10px_rgba(229,0,79,0.2)]">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-white mb-1">The Certaspot Badge</h4>
+                                <p class="text-sm text-brand-gray leading-relaxed">Pass our technical vetting and receive a badge that instantly signals trust and competence to global buyers.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="for-business" class="py-24 bg-[#050505] border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <div>
+                    <div class="inline-block px-3 py-1 rounded-full bg-white/10 text-white font-semibold text-xs tracking-widest uppercase mb-6 border border-white/10">
+                        B2B Subscription
+                    </div>
+                    <h2 class="font-heading text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">Hire without the friction.</h2>
+                    <p class="text-lg text-brand-gray mb-8 leading-relaxed">
+                        The open market is risky and unvetted. Certaspot gives your business instant access to top-tier, technically verified digital executors.
+                    </p>
+                    
+                    <div class="dark-card rounded-2xl p-6 mb-8 flex items-center justify-between">
+                        <div>
+                            <p class="text-xs font-bold text-brand-gray uppercase tracking-widest mb-1">Platform Access</p>
+                            <p class="text-3xl font-bold text-white">$10 <span class="text-sm font-normal text-brand-gray">/ month</span></p>
+                        </div>
+                        <a href="#waitlist" class="text-brand-magenta font-semibold text-sm hover:text-white transition-colors flex items-center gap-2">
+                            Secure pricing <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-brand-gray text-sm">
+                            <i class="fa-solid fa-circle-check text-brand-magenta"></i> Access top 5% vetted African talent
+                        </li>
+                        <li class="flex items-center gap-3 text-brand-gray text-sm">
+                            <i class="fa-solid fa-circle-check text-brand-magenta"></i> Standardized micro-gigs for rapid execution
+                        </li>
+                        <li class="flex items-center gap-3 text-brand-gray text-sm">
+                            <i class="fa-solid fa-circle-check text-brand-magenta"></i> Zero financial risk with our Escrow engine
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="relative">
+                    <div class="w-full aspect-square max-w-md mx-auto dark-card border border-white/10 rounded-[2rem] p-8 flex flex-col justify-center">
+                        <div class="border-b border-white/10 pb-6 mb-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-white/10"></div>
+                                <div class="flex-1">
+                                    <div class="h-3 w-1/3 bg-white/20 rounded mb-2"></div>
+                                    <div class="h-2 w-1/4 bg-brand-magenta rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white/5 rounded-xl p-4 border border-white/5 mb-4">
+                            <p class="text-xs text-brand-gray mb-2">Project Status</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-semibold text-white">UI/UX Redesign</span>
+                                <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Escrow Funded</span>
+                            </div>
+                        </div>
+                        <div class="bg-white/5 rounded-xl p-4 border border-white/5">
+                            <div class="w-full bg-white/10 rounded-full h-1.5 mb-2 overflow-hidden">
+                                <div class="bg-brand-magenta h-1.5 rounded-full w-[65%]"></div>
+                            </div>
+                            <p class="text-xs text-right text-brand-gray">65% Complete</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="waitlist" class="py-24 relative">
+        <div class="absolute inset-0 bg-brand-magenta opacity-[0.03] blur-[100px] pointer-events-none"></div>
+        <div class="max-w-2xl mx-auto px-6 relative z-10">
+            
+            <div class="text-center mb-10">
+                <h2 class="font-heading text-3xl font-bold text-white mb-4">Secure your spot</h2>
+                <p class="text-brand-gray">Join the businesses and talents already waiting for Beta access.</p>
+            </div>
+
+            <div class="dark-card border border-white/10 rounded-[2rem] p-8 md:p-10 relative overflow-hidden shadow-2xl">
+                
+                <!-- Success State (Hidden initially) -->
+                <div id="success-state" class="absolute inset-0 bg-[#0a0a0a] z-20 flex flex-col items-center justify-center p-8 text-center transition-all duration-500 opacity-0 pointer-events-none border border-brand-magenta/30 rounded-[2rem]">
+                    <div class="w-16 h-16 bg-brand-magenta/20 text-brand-magenta rounded-full flex items-center justify-center text-3xl mb-6 transform scale-0 transition-transform duration-500 delay-300 shadow-[0_0_20px_rgba(229,0,79,0.3)]" id="success-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold mb-2 text-white">You're on the list!</h3>
+                    <p class="text-brand-gray mb-8 text-sm">Thanks for joining. We will notify you the moment Certaspot opens its doors.</p>
+                    <button onclick="resetForm()" class="px-6 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-full transition-colors">
+                        Back to form
+                    </button>
+                </div>
+
+                <!-- Form State -->
+                <div id="form-state" class="transition-all duration-300">
+                    <!-- Role Toggle -->
+                    <div class="flex p-1 bg-black/50 border border-white/5 rounded-xl mb-8 relative">
+                        <div id="tab-indicator" class="absolute left-1 top-1 bottom-1 w-[calc(50%-4px)] bg-white/10 rounded-lg border border-white/10 transition-all duration-300 ease-out"></div>
+                        <button onclick="switchRole('talent')" id="btn-talent" class="flex-1 py-2.5 rounded-lg font-semibold text-sm relative z-10 text-white transition-colors">
+                            I am a Talent
+                        </button>
+                        <button onclick="switchRole('business')" id="btn-business" class="flex-1 py-2.5 rounded-lg font-semibold text-sm relative z-10 text-brand-gray transition-colors">
+                            I am a Business
+                        </button>
+                    </div>
+
+                    <form id="waitlist-form" onsubmit="submitForm(event)" class="space-y-4">
+                        <div>
+                            <input type="text" required placeholder="Full Name" class="input-field w-full px-4 py-3.5 rounded-xl text-sm transition-all placeholder:text-gray-500">
+                        </div>
+                        <div>
+                            <input type="email" required placeholder="Email Address" class="input-field w-full px-4 py-3.5 rounded-xl text-sm transition-all placeholder:text-gray-500">
+                        </div>
+                        
+                        <div id="talent-input">
+                            <select required id="skill-select" class="input-field w-full px-4 py-3.5 rounded-xl text-sm transition-all cursor-pointer appearance-none text-gray-400">
+                                <option value="" disabled selected>Select your primary skill...</option>
+                                <option value="uiux">UI/UX Design</option>
+                                <option value="frontend">Frontend Development</option>
+                                <option value="backend">Backend Development</option>
+                                <option value="writing">Copywriting</option>
+                                <option value="marketing">Digital Marketing</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div id="business-input" class="hidden">
+                            <input type="text" id="company-name" placeholder="Company Name" class="input-field w-full px-4 py-3.5 rounded-xl text-sm transition-all placeholder:text-gray-500">
+                        </div>
+
+                        <button type="submit" class="w-full bg-white hover:bg-gray-200 text-black font-bold py-3.5 mt-4 rounded-xl transition-all flex items-center justify-center gap-2 group">
+                            <span>Request early access</span>
+                            <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1 text-sm"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-white/5 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-bullseye text-brand-magenta"></i>
+                <span class="font-sans font-bold text-lg text-white tracking-tight">Certaspot</span>
+            </div>
+            
+            <div class="text-brand-gray text-xs">
+                &copy; 2026 Certaspot. The Proficiency Engine.
+            </div>
+            
+            <div class="flex gap-4">
+                <a href="#" class="text-brand-gray hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-brand-gray hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentRole = 'talent';
+
+        function switchRole(role) {
+            currentRole = role;
+            
+            const btnTalent = document.getElementById('btn-talent');
+            const btnBusiness = document.getElementById('btn-business');
+            const indicator = document.getElementById('tab-indicator');
+            
+            const inputTalent = document.getElementById('talent-input');
+            const inputBusiness = document.getElementById('business-input');
+            
+            const skillSelect = document.getElementById('skill-select');
+            const companyName = document.getElementById('company-name');
+
+            if (role === 'talent') {
+                btnTalent.classList.replace('text-brand-gray', 'text-white');
+                btnBusiness.classList.replace('text-white', 'text-brand-gray');
+                indicator.style.transform = 'translateX(0)';
+                
+                inputTalent.classList.remove('hidden');
+                inputBusiness.classList.add('hidden');
+                skillSelect.setAttribute('required', 'required');
+                companyName.removeAttribute('required');
+            } else {
+                btnBusiness.classList.replace('text-brand-gray', 'text-white');
+                btnTalent.classList.replace('text-white', 'text-brand-gray');
+                indicator.style.transform = 'translateX(100%)';
+                
+                inputBusiness.classList.remove('hidden');
+                inputTalent.classList.add('hidden');
+                companyName.setAttribute('required', 'required');
+                skillSelect.removeAttribute('required');
+            }
+        }
+
+        function submitForm(e) {
+            e.preventDefault();
+            
+            const formState = document.getElementById('form-state');
+            const successState = document.getElementById('success-state');
+            const successIcon = document.getElementById('success-icon');
+            const form = document.getElementById('waitlist-form');
+
+            formState.style.opacity = '0';
+            formState.style.pointerEvents = 'none';
+            
+            setTimeout(() => {
+                successState.classList.remove('opacity-0', 'pointer-events-none');
+                successState.classList.add('opacity-100');
+                
+                setTimeout(() => {
+                    successIcon.classList.remove('scale-0');
+                    successIcon.classList.add('scale-100');
+                }, 100);
+                
+                form.reset();
+            }, 300);
+        }
+
+        function resetForm() {
+            const formState = document.getElementById('form-state');
+            const successState = document.getElementById('success-state');
+            const successIcon = document.getElementById('success-icon');
+
+            successIcon.classList.remove('scale-100');
+            successIcon.classList.add('scale-0');
+
+            successState.classList.remove('opacity-100');
+            successState.classList.add('opacity-0', 'pointer-events-none');
+            
+            setTimeout(() => {
+                formState.style.opacity = '1';
+                formState.style.pointerEvents = 'auto';
+                switchRole('talent');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
